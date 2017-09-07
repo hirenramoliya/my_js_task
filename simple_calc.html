@@ -2,23 +2,95 @@
 <html> 
 <head>
 <meta charset=utf-8 />
-<title>JavaScript program to calculate multiplication and division of two numbers </title>
+<title>simple calculator </title>
 <style type="text/css">
-body {margin: 30px;}
+form_main {
+    width: 100%;
+}
+.form_main h4 {
+    font-family: roboto;
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+.heading {
+    border-bottom: 1px solid #fcab0e;
+    padding-bottom: 9px;
+    position: relative;
+}
+.heading span {
+    background: #9e6600 none repeat scroll 0 0;
+    bottom: -2px;
+    height: 3px;
+    left: 0;
+    position: absolute;
+    width: 75px;
+}   
+.form {
+    border-radius: 7px;
+    padding: 6px;
+}
+.txt[type="text"] {
+    border: 1px solid #ccc;
+    margin: 10px 0;
+    padding: 10px 0 10px 5px;
+    width: 100%;
+}
+.txt_3[type="text"] {
+    margin: 10px 0 0;
+    padding: 10px 0 10px 5px;
+    width: 100%;
+}
+.txt2[type="button"] {
+    background: #242424 none repeat scroll 0 0;
+    border: 1px solid #4f5c04;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 15px;
+    font-style: normal;
+    line-height: 35px;
+    margin: 10px 0;
+    padding: 0;
+    text-transform: uppercase;
+    width: 24%;
+    cursor: pointer;
+}
+.txt2:hover {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    color: #5793ef;
+    transition: all 0.5s ease 0s;
+}
+.col-md-4 {
+    width: 33.33333333%;
+}
+
 </style> 
 </head>
 <body>
-<form>
-1st Number : <input type="text" id="firstNumber" /><br>
-2nd Number: <input type="text" id="secondNumber" /><br>
-<input type="button" onClick="addBy()" Value="add" />
-<input type="button" onClick="subBy()" Value="subtract" />
-<input type="button" onClick="multiplyBy()" Value="Multiply" />
-<input type="button" onClick="divideBy()" Value="Divide" />
-</form>
-<p>The Result is : <br>
-<span id = "result"></span>
-</p>
+<div class="container">
+	<div class="row">
+    <div class="col-md-4">
+		<div class="form_main">
+                <h4 class="heading"><strong>Simple </strong> Calculator <span></span></h4>
+                <div class="form">
+                <form>
+                    <input type="text" required="" placeholder="Please Enter First Number" id="firstNumber" class="txt">
+                    <input type="text" required="" placeholder="Please Enter Second Number" id="secondNumber" class="txt">
+				   	<input type="button" onClick="addBy()" Value="add"  class="txt2" />
+					<input type="button" onClick="subBy()" Value="subtract"  class="txt2" />
+					<input type="button" onClick="multiplyBy()" Value="Multiply"  class="txt2" />
+					<input type="button" onClick="divideBy()" Value="Divide" class="txt2" />
+                </form>
+				<p>The Result is : <br>
+					<span id = "result"></span>
+				</p>                
+            </div>
+            </div>
+            </div>
+	</div>
+</div>
 <script type="text/javascript">
 	function addBy()
 	{	

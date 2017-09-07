@@ -1,5 +1,69 @@
 <html>
 <head>
+<style type="text/css">
+form_main {
+    width: 100%;
+}
+.form_main h4 {
+    font-family: roboto;
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+.heading {
+    border-bottom: 1px solid #fcab0e;
+    padding-bottom: 9px;
+    position: relative;
+}
+.heading span {
+    background: #9e6600 none repeat scroll 0 0;
+    bottom: -2px;
+    height: 3px;
+    left: 0;
+    position: absolute;
+    width: 75px;
+}   
+.form {
+    border-radius: 7px;
+    padding: 6px;
+}
+.txt[type="text"] {
+    border: 1px solid #ccc;
+    margin: 10px 0;
+    padding: 10px 0 10px 5px;
+    width: 100%;
+}
+.txt_3[type="text"] {
+    margin: 10px 0 0;
+    padding: 10px 0 10px 5px;
+    width: 100%;
+}
+.txt2[type="button"] {
+    background: #242424 none repeat scroll 0 0;
+    border: 1px solid #4f5c04;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 15px;
+    font-style: normal;
+    line-height: 35px;
+    margin: 10px 0;
+    padding: 0;
+    text-transform: uppercase;
+    width: 24%;
+    cursor: pointer;
+}
+.txt2:hover {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    color: #5793ef;
+    transition: all 0.5s ease 0s;
+}
+.col-md-4 {
+    width: 33.33333333%;
+}
+	
+</style>
 <script>
 	function check_leapyear(){
 		//define variables
@@ -21,7 +85,19 @@
 </script>
 </head>
 <body>
-<input type="text" id="year"></input>
-<button onclick="check_leapyear()">Check</button>
+<div class="container">
+	<div class="row">
+    <div class="col-md-4">
+		<div class="form_main">
+	        <div class="form">
+	        <form>                
+				<input type="text" id="year" placeholder="Enter Year"  class="txt"></input>
+				<button type="button" onclick="check_leapyear()" class="txt2">Check</button>
+        	</form>            
+	    </div>
+	    </div>
+	    </div>
+		</div>
+</div>
 </body>
 </html>
