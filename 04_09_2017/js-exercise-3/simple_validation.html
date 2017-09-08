@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html> 
+<head>
+<meta charset=utf-8 />
+<title>User Form Validation</title>
+<style type="text/css">
+.form_main {
+    width: 100%;
+    margin: 20px;
+}
+.form_main h4 {
+    font-family: roboto;
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+.heading {
+    border-bottom: 1px solid #fcab0e;
+    padding-bottom: 9px;
+    position: relative;
+}
+.heading span {
+    background: #9e6600 none repeat scroll 0 0;
+    bottom: -2px;
+    height: 3px;
+    left: 0;
+    position: absolute;
+    width: 75px;
+}   
+.form {
+    border-radius: 7px;
+    padding: 6px;
+}
+.txt {
+    border: 1px solid #ccc;
+    margin: 10px 0;
+    padding: 10px 0 10px 5px;
+    width: 100%;
+}
+.txt_3 {
+    margin: 10px 0 0;
+    padding: 10px 0 10px 5px;
+    width: 100%;
+}
+.txt2[type="button"] {
+    background: #242424 none repeat scroll 0 0;
+    border: 1px solid #4f5c04;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 15px;
+    font-style: normal;
+    line-height: 35px;
+    margin: 10px 0;
+    padding: 0;
+    text-transform: uppercase;
+    width: 24%;
+    cursor: pointer;
+}
+.txt2:hover {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    color: #5793ef;
+    transition: all 0.5s ease 0s;
+}
+.col-md-4 {
+    width: 33.33333333%;
+}
+
+</style> 
+</head>
+<body>
+<div class="container">
+	<div class="row">
+    <div class="col-md-4">
+		<div class="form_main">
+      <h4 class="heading"><strong>User </strong> Form <span></span></h4>
+      <div class="form">
+      <p id="message" style="color:green;"></p>
+      <form name="userform">
+          <input type="text" id="first_name" placeholder="Firstname" name="firstname" class="txt">
+          <input type="text" id="last_name" placeholder="Lastname" name="lastname" class="txt">
+          <input type="text" id="emailid" placeholder="Email" name="email" class="txt">
+          <input type="text" placeholder="UserID" name="userid" class="txt">
+          <input type="password" id="pass" placeholder="Password" name="password" class="txt">
+          <input type="password" id="con_pass" placeholder="Confirm Password" name="con_password" class="txt">                    
+          <input type="button" onClick="validate()" Value="Sign In" class="txt2" />
+      </form>               
+      </div>
+     </div>
+    </div>
+	</div>
+</div>
+<script type="text/javascript">
+	function validate() {
+    
+    var email = document.getElementsByName("email")[0].value
+
+    if (document.userform.firstname.value == 0) {
+        alert("Enter First Name");
+        document.getElementById("first_name").focus();
+        return false;
+    }
+ 
+    if (document.userform.lastname.value == 0) {
+        alert("Enter Last Name");
+        document.getElementById("last_name").focus();
+        return false;
+    }
+    if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/).test(email)) {
+        alert("You have entered an invalid email address!");
+        document.getElementById("emailid").focus();
+        return false;
+    } 
+   
+    if (document.userform.password.value == 0) {
+        alert("enter Password");
+        document.getElementById("pass").focus();
+        return false;
+    }
+    if (document.userform.con_password.value == 0) {
+        alert("enter ConfirmPassword");
+        document.getElementById("con_pass").focus();
+        return false;
+    }    
+    else {
+      document.getElementById("message").innerHTML = "Sucessfull Login";
+    }
+  }
+</script>
+</body>
+</html>
